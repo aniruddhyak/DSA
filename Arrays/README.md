@@ -1,8 +1,8 @@
 **Problems**:
 
-1. _MoveZeroes_
-2. _SortColor_
-3. _MaxProfit_
+1. _MoveZeroes_ (Easy)
+2. _SortColor_ (Medium)
+3. _MaxProfit_ (Easy)
 
 
 **Approaches:**
