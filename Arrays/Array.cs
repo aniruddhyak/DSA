@@ -1,3 +1,6 @@
+public static class Array
+{
+
 /// <summary>
 /// SORT COLORS
 /// 3 POINTERS APPROACH
@@ -31,3 +34,28 @@ public static void SortColor(int[] arr)
 
         }
     }
+
+    /// <summary>
+    /// TO MOVE ALL ZEROES TO END KEEPING THE RELATIVE ORDER
+    /// </summary>
+    /// <param name="arr"></param>
+    public static void MoveZeroes(int[] arr)
+    {
+        int rightPtr = 0;
+        int leftPtr = 0;
+
+        while (rightPtr < arr.Length)
+        {
+            if (arr[rightPtr] != 0)
+            {
+                int temp = arr[leftPtr];
+                arr[leftPtr] = arr[rightPtr];
+                arr[rightPtr] = temp;
+
+                leftPtr++;
+            }
+
+            rightPtr++;
+        }
+    }
+}    
