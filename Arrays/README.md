@@ -2,6 +2,7 @@
 
 1. _MoveZeroes_
 2. _SortColor_
+3. _MaxProfit_
 
 
 **Approaches:**
