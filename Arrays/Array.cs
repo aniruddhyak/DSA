@@ -58,4 +58,30 @@ public static void SortColor(int[] arr)
             rightPtr++;
         }
     }
+
+    /// <summary>
+    /// MAX PROFIT/ BEST TIME TO BUY AND SELL STOCK
+    /// </summary>
+    /// <param name="prices"></param>
+    /// <returns></returns>
+    public static int MaxProfit(int[] prices)
+    {
+        if(prices.Length < 2 )
+            return 0;
+            
+        int maxProfit = 0;
+        int lowestPrice = int.MaxValue;
+
+        for (int i = 0; i<prices.Length; i++)
+        {
+            if ((prices[i] < lowestPrice)) 
+                lowestPrice = prices[i];
+
+            int currProfit = prices[i] - lowestPrice;
+            maxProfit = maxProfit>currProfit ? maxProfit : currProfit;
+            
+        }
+        
+        return maxProfit;
+    }
 }    
