@@ -84,4 +84,37 @@ public static void SortColor(int[] arr)
         
         return maxProfit;
     }
+
+    public static int ContanairWithMostWater(int[] arr)
+    {
+        //brute force - o(n2)
+        /*int ret = 0;
+
+        for (int i = 0; i< arr.Length - 1; i++)
+        {
+            for (int j = i+1; j< arr.Length; j++)
+            {
+                int area = (j-i) * (arr[i] < arr[j] ? arr[i]: arr[j]);
+                ret = ret > area ? ret : area;
+            }
+        }*/
+
+        //linear time
+
+        int ret = 0;
+
+        int leftPtr = 0; int rightPtr = arr.Length - 1;
+        while (leftPtr < rightPtr)
+        {
+            int area = (rightPtr - leftPtr) * (arr[leftPtr] < arr[rightPtr] ? arr[leftPtr] : arr[rightPtr]);
+            ret = ret > area ? ret : area;
+
+            if (arr[leftPtr] < arr[rightPtr])
+                leftPtr++;
+            else
+                rightPtr--;
+        }
+        
+        return ret;
+    }
 }    
