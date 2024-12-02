@@ -117,4 +117,31 @@ public static void SortColor(int[] arr)
         
         return ret;
     }
+
+    public static int LongestConsecutiveSequence(int[] nums)
+    {
+        if (nums.Length == 0) return 0;
+    
+        var numSet = new HashSet<int>(nums);
+        int longestStreak = 0;
+    
+        foreach (var num in numSet)
+        {
+            if (!numSet.Contains(num - 1))
+            {
+                int currentNum = num;
+                int currentStreak = 1;
+    
+                while (numSet.Contains(currentNum + 1))
+                {
+                    currentNum += 1;
+                    currentStreak += 1;
+                }
+    
+                longestStreak = longestStreak > currentStreak? longestStreak : currentStreak;
+            }
+        }
+    
+        return longestStreak;
+    }
 }    
