@@ -144,4 +144,22 @@ public static void SortColor(int[] arr)
     
         return longestStreak;
     }
+
+    public static int[] TwoSum(int[] nums, int target)
+    {
+        Dictionary<int, int> ht = new Dictionary<int, int>();
+    
+        for(int i = 0; i<nums.Length; i++)
+        {
+            int tmp = nums[i];
+            if (ht.ContainsKey(target - nums[i]))
+            {
+                // If found, return indices of both numbers
+                return new int[] { ht[target - nums[i]], i };
+            }    
+            ht[nums[i]] = i;
+        }
+    
+        return new int[] { -1, -1};
+    }
 }    
