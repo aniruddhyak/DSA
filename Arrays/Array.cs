@@ -162,4 +162,26 @@ public static void SortColor(int[] arr)
     
         return new int[] { -1, -1};
     }
+
+    /// <summary>
+    /// DESC - TWO Pointer approach
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public static int[] TwoSumSorted(int[] nums, int target)
+    {
+        int leftPtr = 0, rightPtr = nums.Length - 1;
+        while (leftPtr < rightPtr)
+        {
+            if (nums[leftPtr] + nums[rightPtr] < target)
+                leftPtr++;
+            else if (nums[leftPtr] + nums[rightPtr] > target)
+                rightPtr--;
+            else
+                return new int[] { leftPtr + 1, rightPtr + 1 };
+        }
+    
+        return new int[] { -1, -1 };
+    }
 }    
