@@ -3,6 +3,7 @@
 1. _MoveZeroes_ (Easy)
 2. _SortColor_ (Medium)
 3. _MaxProfit_ (Easy)
+4. _ContanairWithMostWater_
 
 
 **Approaches:**
