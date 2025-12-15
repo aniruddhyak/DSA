@@ -1,6 +1,88 @@
 public static class Array
 {
 
+            #region prefixsum
+
+        /// <summary>
+        /// BRUTE FORCE APPROACH. TIME COMPLEXITY O(n2)
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int[] ProductExceptSelfBF(int[] nums)
+        {
+            int[] result = new int[nums.Length];
+
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                result[i] = 1;
+                for (int j = 0; j < nums.Length; j++)
+                {
+                    if (j != i)
+                        result[i] = result[i] * nums[j];
+                }
+            }            
+
+            return result;
+        }
+
+        /// <summary>
+        /// OPTIMIZED APPROACH. TIME COMPLEXITY O(n) & SPACE COMPLEXITY O(n)
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int[] ProductExceptSelf(int[] nums)
+        {
+            int[] result = new int[nums.Length];
+
+            int[] prefixResult = new int[nums.Length];
+            prefixResult[0] = 1;
+            for (int i = 1; i < nums.Length; i++)
+            {
+                
+               prefixResult[i] = nums[i-1] * prefixResult[i-1];
+            }
+
+            int[] postfixResult = new int[nums.Length];
+            postfixResult[nums.Length - 1] = 1;
+            for (int i = nums.Length - 2; i >= 0; i--)
+            {
+                postfixResult[i] = nums[i+1] * postfixResult[i+1];
+            }
+
+            for (int i = 0; i< nums.Length; i++)
+                result[i] = prefixResult[i] * postfixResult[i];
+
+            return result;
+        }
+
+        /// <summary>
+        /// OPTIMIZED WITH SPACE COMPLEXITY
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int[] ProductExceptSelfSCO(int[] nums)
+        {
+            int[] result = new int[nums.Length];
+
+            result[0] = 1;
+            for (int i = 1; i < nums.Length; i++)
+            {
+                result[i] = nums[i - 1] * result[i - 1];
+            }
+
+            int suffix = 1;
+            for (int i = nums.Length - 2; i >= 0; i--)
+            {
+                suffix = suffix * nums[i + 1];
+                result[i] = result[i] * suffix;
+            }
+
+            
+            return result;
+        }
+        #endregion prefixsum
+
 /// <summary>
 /// SORT COLORS
 /// 3 POINTERS APPROACH
