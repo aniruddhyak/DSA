@@ -39,6 +39,7 @@ Applications:
 4) **Prefix Sum**
 
 Applications:
+- [Leetcode problem - 238](https://leetcode.com/problems/product-of-array-except-self/description/ )
 
 5) **Binary Search**
 
