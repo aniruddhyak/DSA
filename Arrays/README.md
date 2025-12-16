@@ -40,6 +40,7 @@ Applications:
 
 Applications:
 - [Leetcode problem - 238](https://leetcode.com/problems/product-of-array-except-self/description/ )
+- [Leetcode problem - 560](https://leetcode.com/problems/subarray-sum-equals-k/description/)
 
 5) **Binary Search**
 
