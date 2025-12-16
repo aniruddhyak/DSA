@@ -36,11 +36,14 @@ Elements often non-negative (especially for sum-based windows).
 Applications:
 
 
-4) **Prefix Sum**
+4) **Prefix Sum** : The core purpose of the **Prefix Sum or Cumulative sum** is to solve the efficiency bottleneck caused by **repeated range queries** on static data.
 
 Applications:
+**Pattern 1: Basic Range questions**
 - [Leetcode problem - 238](https://leetcode.com/problems/product-of-array-except-self/description/ )
+**Pattern 2: Prefix Sum + Hash Map**
 - [Leetcode problem - 560](https://leetcode.com/problems/subarray-sum-equals-k/description/)
-
+**Pattern 3: 2D Prefix Sum**
+  
 5) **Binary Search**
 
