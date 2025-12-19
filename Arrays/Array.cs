@@ -5,6 +5,31 @@ namespace DSA
         #region prefixsum
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int PivotIndex(int[] nums)
+        {
+            int result = -1;
+        
+            int totalSum = 0;
+            for(int i = 0; i< nums.Length; i++)
+                totalSum += nums[i];
+        
+        
+            int leftSum = 0;
+            for (int i = 0; i < nums.Length; i++) 
+            {
+                if (leftSum == totalSum - nums[i] - leftSum)
+                    return i;
+        
+                leftSum += nums[i];
+            }
+            return result;
+        }    
+
+        /// <summary>
         /// BRUTE FORCE APPROACH. TIME COMPLEXITY O(n2)
         /// </summary>
         /// <param name="nums"></param>
