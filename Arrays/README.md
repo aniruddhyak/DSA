@@ -41,6 +41,7 @@ Applications:
 Applications:
 **Pattern 1: Basic Range questions**
 - [Leetcode problem - 238](https://leetcode.com/problems/product-of-array-except-self/description/ )
+- [Leetcode problem - 724](https://leetcode.com/problems/find-pivot-index/description/)
 **Pattern 2: Prefix Sum + Hash Map**
 - [Leetcode problem - 560](https://leetcode.com/problems/subarray-sum-equals-k/description/)
 **Pattern 3: 2D Prefix Sum**
