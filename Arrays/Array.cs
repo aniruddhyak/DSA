@@ -107,7 +107,33 @@ namespace DSA
             }
 
             return totalNumOfSubArray;
-
+        }
+        
+        /// <summary>
+        /// OPTIMIZED VERSION
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static int SubarraySum(int[] nums, int k)
+        {
+            int count = 0;
+            int prefixSum = 0;
+            Dictionary<int, int> prefixCount = new Dictionary<int, int>();
+            prefixCount[0] = 1; // Important for cases where prefixSum == k
+        
+            foreach (int num in nums)
+            {
+                prefixSum += num;
+                int target = prefixSum - k;
+        
+                if (prefixCount.ContainsKey(target))
+                    count += prefixCount[target];
+        
+                prefixCount[prefixSum] = prefixCount.ContainsKey(prefixSum) ? prefixCount[prefixSum] + 1 : 1;
+            }
+        
+            return count;
         }
 
 
