@@ -22,7 +22,7 @@ namespace DSA
             {
                 prefixSum = prefixSum + arr[i];
         
-                int diff = k - prefixSum;
+                int diff = prefixSum-k;
                 if(prefixSumList.ContainsKey(diff))
                 {
                     int currSize = i- prefixSumList[diff];
