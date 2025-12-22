@@ -4,6 +4,37 @@ namespace DSA
     {
         #region prefixsum
 
+       /// <summary>
+        /// to find the length of the longest subarray having sum k
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        internal static int LongestSubarray(int[] arr, int k)
+        {
+            int maxSize = 0;            
+            int prefixSum = 0;
+            
+            Dictionary<int, int> prefixSumList = new Dictionary<int, int>();
+            prefixSumList.Add(0, -1);
+            
+            for(int i =0; i< arr.Length; i++)
+            {
+                prefixSum = prefixSum + arr[i];
+        
+                int diff = k - prefixSum;
+                if(prefixSumList.ContainsKey(diff))
+                {
+                    int currSize = i- prefixSumList[diff];
+                    maxSize= maxSize> currSize? maxSize : currSize;
+                }        
+                if(!prefixSumList.ContainsKey(prefixSum))
+                    prefixSumList.Add(prefixSum, i);                
+            }        
+        
+            return maxSize;
+        }     
+
         /// <summary>
         /// 
         /// </summary>
