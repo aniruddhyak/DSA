@@ -17,14 +17,22 @@ Applications:
 
 Applications:
 
-**Pattern 1: Basic Range questions**
+**Basic Range questions**
 - [Leetcode problem - 238](https://leetcode.com/problems/product-of-array-except-self/description/ )
 - [Leetcode problem - 724](https://leetcode.com/problems/find-pivot-index/description/)
   
-**Pattern 2: Prefix Sum + Hash Map**
+**Prefix Sum + Hash Map**
 - [Leetcode problem - 560](https://leetcode.com/problems/subarray-sum-equals-k/description/)
+- [Leetcode problem - 525](https://leetcode.com/problems/contiguous-array/description/)
+- [Leetcode problem - 974](https://leetcode.com/problems/subarray-sums-divisible-by-k/description/) 
   
-**Pattern 3: 2D Prefix Sum**
-  
-5) **Binary Search**
+**2D Prefix Sum**
+- [Leetcode problem - 304](https://leetcode.com/problems/range-sum-query-2d-immutable/description/)
+
+**Advanced - Difference Array**
+- [Leetcode problem - 1109](https://leetcode.com/problems/corporate-flight-bookings/description/)
+- [Leetcode problem - 1074](https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/description/)
+
+5) ****
+6) **Binary Search**
 
