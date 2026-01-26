@@ -1,4 +1,4 @@
-This outlines the core strategies for solving Stack-based problems in technical interviews. In FAANG rounds, the Stack is rarely just about Push and Pop; it's about managing state and optimizing time complexity.
+This outlines the core strategies for solving Stack-based problems in technical interviews. The Stack is rarely just about Push and Pop; it's about managing state and optimizing time complexity.
 
 **Core Mental Model:** "Deferred Processing"
 The Stack is used when we encounter an element but cannot process it yet. We "park" it in the stack until we find its "partner" or "boundary" later in the input.
