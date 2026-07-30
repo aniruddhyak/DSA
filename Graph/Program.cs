@@ -10,12 +10,12 @@ public class Program
       
         //sequential nodes
         int[,] edgesSN = {{0,1},{2,1},{3,4}};
-        GraphBasics.CreateAdjacenyListSequential(n, edgesSN);
-        GraphBasics.IterateThroughAdjacancyList();
+        var graph = GraphBasics.CreateAdjacenyListSequential(n, edgesSN);
+        GraphBasics.IterateThroughAdjacancyList(graph);
 
         //Non-Sequential nodes
         int[,] edgesNSN = {{100,500},{500,7000},{7000,9999}, {100,800}};
-        GraphBasics.CreateAdjacenyListNonSequential(edgesNSN);
-        GraphBasics.IterateThroughNonSequentialAdjacancyList();
+        var nsGraph = GraphBasics.CreateAdjacenyListNonSequential(edgesNSN);
+        GraphBasics.IterateThroughNonSequentialAdjacancyList(nsGraph);
     }
 }
