@@ -124,4 +124,51 @@ public static class GraphBasics
             Console.WriteLine();
         }
     }
+
+    /// <summary>
+    /// Creates an undirected adjacency list for nodes numbered from 0 through
+    /// <paramref name="nodes"/> - 1.
+    /// </summary>
+    /// <param name="nodes">The total number of nodes in the graph.</param>
+    /// <param name="edges">
+    /// A two-dimensional array whose rows contain the two endpoints of each edge.
+    /// </param>
+    /// <returns>An adjacency list indexed by node number.</returns>
+    public static List<(int,int)>[] CreateAdjacenyListSequentialWG(int nodes, int[,] edges)
+    {
+        //TO CHECK IF NODE NUMBERS ARE VALID
+        if(nodes < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(nodes));
+        }
+        if(edges.GetLength(1) != 3)
+        {
+            throw new ArgumentException("Each edge must have 2 nodes and weight", nameof(edges));
+        }
+        //Initialize the adjacanyList
+        List<(int node,int weight)>[] adjacanyList = new List<(int, int)>[nodes];
+        for(int i = 0; i<nodes; i++)
+        {
+            adjacanyList[i] = new List<(int, int)>();
+        }
+
+        //Iterate through edges and add to the list
+        for(int i = 0; i< edges.GetLength(0); i++)
+        {
+            int u = edges[i,0];
+            int v = edges[i,1];
+            int w = edges[i,2];
+            
+            if(u<0 || u >= nodes || v<0 || v >= nodes)
+            {
+                throw new ArgumentException("Edge contains nodes outside valid range", nameof(edges));
+            }
+
+           adjacanyList[u].Add((v,w));
+            if(u!=v)
+                adjacanyList[v].Add((u,w));
+        }
+
+        return adjacanyList;        
+    }
 }
